@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>InputedValues.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">lab5</a> &gt; <a href="index.source.html" class="el_package">org.example</a> &gt; <span class="el_source">InputedValues.java</span></div><h1>InputedValues.java</h1><pre class="source lang-java linenums">package org.example;
+
+import java.io.InputStream;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+<span class="fc" id="L7">public class InputedValues {</span>
+
+    private double value1;
+    private double value2;
+    private double result;
+
+    public  void setValue1(final double value1) {
+<span class="fc" id="L14">        this.value1 = value1;</span>
+<span class="fc" id="L15">    }</span>
+
+    public void setValue2(final double value2) {
+<span class="fc" id="L18">        this.value2 = value2;</span>
+<span class="fc" id="L19">    }</span>
+
+    public void setResult(final double result) {
+<span class="fc" id="L22">        this.result = result;</span>
+<span class="fc" id="L23">    }</span>
+
+    public double getResult() {
+<span class="fc" id="L26">        return result;</span>
+    }
+
+    public double getValue2() {
+<span class="fc" id="L30">        return value2;</span>
+    }
+
+    public double getValue1() {
+<span class="fc" id="L34">        return value1;</span>
+    }
+
+    void setValues(InputStream inputStream) {
+        try {
+<span class="fc" id="L39">            System.out.println(&quot;Input your numbers.\nValue1: &quot;);</span>
+<span class="fc" id="L40">            Scanner scanner = new Scanner(inputStream);</span>
+<span class="fc" id="L41">            value1 = scanner.nextDouble();</span>
+<span class="fc" id="L42">            System.out.println(&quot;Value2: &quot;);</span>
+<span class="fc" id="L43">            value2 = scanner.nextDouble();</span>
+<span class="nc" id="L44">        } catch (InputMismatchException e) {</span>
+<span class="nc" id="L45">            e.printStackTrace();</span>
+<span class="nc" id="L46">            System.out.println(&quot;Wrong input. Expected float number.&quot;);</span>
+<span class="fc" id="L47">        }</span>
+<span class="fc" id="L48">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

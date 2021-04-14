@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+lab5,org.example,Division,0,13,0,0,0,3,0,2,0,2
+lab5,org.example,Main,29,124,2,5,8,40,2,7,1,3
+lab5,org.example,Multiplication,0,13,0,0,0,3,0,2,0,2
+lab5,org.example,InputedValues,6,45,0,0,3,17,0,8,0,8
+lab5,org.example,Subtraction,0,13,0,0,0,3,0,2,0,2
+lab5,org.example,Addition,0,13,0,0,0,3,0,2,0,2

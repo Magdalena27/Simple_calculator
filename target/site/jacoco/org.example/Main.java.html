@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">lab5</a> &gt; <a href="index.source.html" class="el_package">org.example</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package org.example;
+
+import java.io.InputStream;
+import java.util.Scanner;
+
+<span class="fc" id="L6">public class Main {</span>
+    double resultOfOperation;
+
+    public void chooseMathOperation(char mathOperator, InputStream inputStream) {
+        try {
+<span class="fc bfc" id="L11" title="All 5 branches covered.">            switch (mathOperator) {</span>
+                case '+':
+<span class="fc" id="L13">                    System.out.println(&quot;You selected addition.\n&quot;);</span>
+<span class="fc" id="L14">                    final Addition addition = new Addition();</span>
+<span class="fc" id="L15">                    addition.setValues(inputStream);</span>
+<span class="fc" id="L16">                    addition.count();</span>
+<span class="fc" id="L17">                    resultOfOperation = addition.getResult();</span>
+<span class="fc" id="L18">                    System.out.println(&quot;Your result: &quot; + resultOfOperation);</span>
+<span class="fc" id="L19">                    break;</span>
+                case '-':
+<span class="fc" id="L21">                    System.out.println(&quot;You selected subtraction.\n&quot;);</span>
+<span class="fc" id="L22">                    final Subtraction subtraction = new Subtraction();</span>
+<span class="fc" id="L23">                    subtraction.setValues(inputStream);</span>
+<span class="fc" id="L24">                    subtraction.count();</span>
+<span class="fc" id="L25">                    resultOfOperation = subtraction.getResult();</span>
+<span class="fc" id="L26">                    System.out.println(&quot;Your result: &quot; + resultOfOperation);</span>
+<span class="fc" id="L27">                    break;</span>
+                case '*':
+<span class="fc" id="L29">                    System.out.println(&quot;You selected multiplication.\n&quot;);</span>
+<span class="fc" id="L30">                    final Multiplication multiplication = new Multiplication();</span>
+<span class="fc" id="L31">                    multiplication.setValues(inputStream);</span>
+<span class="fc" id="L32">                    multiplication.count();</span>
+<span class="fc" id="L33">                    resultOfOperation = multiplication.getResult();</span>
+<span class="fc" id="L34">                    System.out.println(&quot;Your result: &quot; + resultOfOperation);</span>
+<span class="fc" id="L35">                    break;</span>
+                case '/':
+<span class="fc" id="L37">                    System.out.println(&quot;You selected division.\n&quot;);</span>
+<span class="fc" id="L38">                    final Division division = new Division();</span>
+<span class="fc" id="L39">                    division.setValues(inputStream);</span>
+<span class="fc" id="L40">                    division.count();</span>
+<span class="fc" id="L41">                    resultOfOperation = division.getResult();</span>
+<span class="fc" id="L42">                    System.out.println(&quot;Your result: &quot; + resultOfOperation);</span>
+<span class="fc" id="L43">                    break;</span>
+                default:
+<span class="fc" id="L45">                    throw new UnsupportedOperationException();</span>
+            }
+<span class="fc" id="L47">        } catch (UnsupportedOperationException e) {</span>
+<span class="fc" id="L48">            e.printStackTrace();</span>
+<span class="fc" id="L49">            System.out.println(&quot;Unsupported type of operation! Choose from: + - / *.&quot;);</span>
+<span class="fc" id="L50">        }</span>
+<span class="fc" id="L51">    }</span>
+
+    public char askForContinuation(InputStream inputStream) {
+        char yesNo;
+
+<span class="fc" id="L56">        System.out.println(&quot;Do you want to continue? (y/n)&quot;);</span>
+<span class="fc" id="L57">        Scanner scanner1 = new Scanner(inputStream);</span>
+<span class="fc" id="L58">        yesNo = scanner1.next().charAt(0);</span>
+<span class="fc" id="L59">        return yesNo;</span>
+    }
+
+    public static void main(String[] args) {
+        char choice;
+        char wantToContinue;
+
+        do {
+
+<span class="nc" id="L68">            System.out.println(&quot;Choose type of operation from: + - * /&quot;);</span>
+<span class="nc" id="L69">            Scanner scanner = new Scanner(System.in);</span>
+<span class="nc" id="L70">            choice = scanner.next().charAt(0);</span>
+<span class="nc" id="L71">            Main main = new Main();</span>
+<span class="nc" id="L72">            main.chooseMathOperation(choice, System.in);</span>
+<span class="nc" id="L73">            wantToContinue = main.askForContinuation(System.in);</span>
+
+<span class="nc bnc" id="L75" title="All 2 branches missed.">        } while (wantToContinue == 'y');</span>
+<span class="nc" id="L76">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
